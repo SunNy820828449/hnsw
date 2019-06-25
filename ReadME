@@ -17,9 +17,14 @@ usage:
 api:
   class hnswxx
   methods:
-    __init__(_m=60,_dim=128,_max_elements=6000000,_query_ef=120,_construction_ef=360,
-             _space=u"l2",_dtype=u"float",_quatization=False,_max_value=0.0)
+    __init__(m=60,dim=128,max_elements=6000000,query_ef=120,construction_ef=360,
+             space=u"l2",dtype=u"float",quatization=False,max_value=0.0)
     add_items(data,idx)
     knn_query(data,k)
     saveIndex(path)
     laodIndex(path)
+
+note:
+    m/query_ef/construction_ef is dependent on the size of max_elements,with larger number can achieve higher recall but cost more time
+    when dtype = u"float" or u"half" only half is used for store and compute
+
