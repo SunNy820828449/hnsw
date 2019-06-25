@@ -5,10 +5,14 @@ The dimension of data should be aligned with 32.
 The dimension of data with int8 should be aligned with 64.
 
 build:
+  pip/pip3 install pybind11
+  ubuntu (version > 16.04)
+  g++ (version > 5.5)
   bash mk.sh
 
 usage:
   import hnswxx
+  see more in test
 
 api:
   class hnswxx
@@ -19,6 +23,3 @@ api:
     knn_query(data,k)
     saveIndex(path)
     laodIndex(path)
-
-finaly:
-  more test is needed.
